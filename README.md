@@ -46,19 +46,5 @@ Assets de cartas:
   - Manejo explícito de errores (throws en validaciones).
   - Modularidad para facilitar pruebas y mantenimiento.
 
-## Contribuir / Extensiones recomendadas
-- Añadir tests unitarios por caso de uso.
-- Separar controladores DOM de lógica de juego para facilitar pruebas (inversión de dependencias).
-- Agregar manejo de estados y persistencia de puntuaciones.
 
-## Referencias rápidas en el código
-- Lógica principal del juego: [src/blackjack/index.js](src/blackjack/index.js)  
-- Exportadores de casos de uso: [src/blackjack/use-cases/index.js](src/blackjack/use-cases/index.js)  
-- Implementaciones individuales:
-  - [`crearDeck`](src/blackjack/use-cases/create-deck.js)
-  - [`pedirCarta`](src/blackjack/use-cases/give-cart.js)
-  - [`valorCarta`](src/blackjack/use-cases/cart-value.js)
-  - [`turnoComputadora`](src/blackjack/use-cases/computer-turn.js)
-  - [`crearCartaHTML`](src/blackjack/use-cases/create-cart.js)
-
-Si quieres, puedo generar un archivo de pruebas inicial o refactorizar algún módulo para separar la lógica de DOM. 
+ 

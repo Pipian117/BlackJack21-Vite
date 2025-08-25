@@ -29,6 +29,17 @@ export const turnoComputadora = (
     const imgCarta = crearCartaHTML(carta);
     divCartasComputadora.append(imgCarta);
 
+    const offset = divCartasComputadora.children.length * 60;
+    imgCarta.style.animationDelay = `${offset}ms`;
+    imgCarta.classList.add("animate-card");
+    imgCarta.addEventListener("animationend", () => {
+      imgCarta.classList.remove("animate-card");
+      imgCarta.style.animationDelay = "";
+      imgCarta.style.opacity = "1";
+    });
+
+    divCartasComputadora.append(imgCarta);
+
     if (puntosMinimos > 21) {
       break;
     }
@@ -44,5 +55,5 @@ export const turnoComputadora = (
     } else {
       alert("Computadora Gana");
     }
-  }, 100);
+  }, 1000);
 };

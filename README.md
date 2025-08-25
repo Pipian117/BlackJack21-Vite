@@ -7,6 +7,7 @@ Juego básico de Black21 (Blackjack) escrito con Vite y Vanilla JavaScript. Proy
 - Arquitectura modular (carpeta `src/blackjack/use-cases`).
 - Uso de JSDoc para tipos y documentación.
 - Buenas prácticas: SOLID y Clean Code.
+- Despligue en Netlify: yan-vite-app.netlify.app
 
 ## Ejecutar el proyecto
 1. Instalar dependencias:
@@ -15,8 +16,6 @@ Juego básico de Black21 (Blackjack) escrito con Vite y Vanilla JavaScript. Proy
    `npm run dev`
 3. Compilar:
    `npm run build`
-4. Previsualizar build:
-   `npm run preview`
 
 Archivos importantes:
 - [index.html](index.html)

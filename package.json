@@ -9,9 +9,14 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.12",
     "vite": "^7.1.2"
   },
   "dependencies": {
+    "primeflex": "^4.0.0",
+    "primeicons": "^7.0.0",
     "underscore": "^1.13.7"
   }
 }

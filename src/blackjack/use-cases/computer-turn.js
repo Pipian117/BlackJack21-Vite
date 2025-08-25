@@ -1,4 +1,5 @@
 import { pedirCarta, valorCarta, crearCartaHTML } from "./";
+import { showToast } from "./../../ui/toast.js";
 
 /**
  *
@@ -14,6 +15,10 @@ export const turnoComputadora = (
   divCartasComputadora,
   deck = []
 ) => {
+  console.log("[turnoComputadora] invoked", {
+    puntosMinimos,
+    deckLength: deck?.length,
+  });
   if (!deck) throw new Error("Deck es obligatorio");
   if (!puntosHTML) throw new Error("PuntosHTML es obligatorio");
 
@@ -21,9 +26,11 @@ export const turnoComputadora = (
 
   do {
     const carta = pedirCarta(deck);
+    console.debug("[turnoComputadora] carta pedida:", carta);
 
     puntosComputadora = puntosComputadora + valorCarta(carta);
     puntosHTML.innerText = puntosComputadora;
+    console.debug("[turnoComputadora] puntosComputadora:", puntosComputadora);
 
     // <img class="carta" src="assets/cartas/2C.png">
     const imgCarta = crearCartaHTML(carta);
@@ -47,13 +54,29 @@ export const turnoComputadora = (
 
   setTimeout(() => {
     if (puntosComputadora === puntosMinimos) {
-      alert("Nadie gana :(");
+      showToast({
+        severity: "info",
+        summary: "Empate",
+        detail: "Nadie gana :(",
+      });
     } else if (puntosMinimos > 21) {
-      alert("Computadora gana");
+      showToast({
+        severity: "warn",
+        summary: "Computadora",
+        detail: "Computadora gana",
+      });
     } else if (puntosComputadora > 21) {
-      alert("Jugador Gana");
+      showToast({
+        severity: "success",
+        summary: "Jugador",
+        detail: "Jugador gana",
+      });
     } else {
-      alert("Computadora Gana");
+      showToast({
+        severity: "error",
+        summary: "Computadora",
+        detail: "Computadora gana",
+      });
     }
-  }, 1000);
+  });
 };
